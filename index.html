@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evox Fit — Premium Gym | Newark, NJ</title>
+  <meta name="description" content="EVOX FIT USA — Newark's premier fitness concept gym. Customized equipment, personal training, sauna, smoothie bar & free parking. 14 Chapel St, Newark NJ." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #080808;
+      --bg-card: #111111;
+      --bg-card2: #161616;
+      --accent: #D4FF00;
+      --accent-dark: #AACF00;
+      --text: #FFFFFF;
+      --text-muted: #888888;
+      --border: #1E1E1E;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      letter-spacing: 4px;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .nav-logo span { color: #fff; }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--accent) !important;
+      color: #000 !important;
+      padding: 10px 22px !important;
+      border-radius: 4px;
+      font-weight: 800 !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--accent-dark) !important;
+      transform: translateY(-1px);
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+    }
+    #hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(8,8,8,.25) 0%, rgba(8,8,8,.55) 55%, rgba(8,8,8,.97) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      padding: 0 24px 160px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,255,0,.12);
+      border: 1px solid rgba(212,255,0,.3);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(68px, 11vw, 128px);
+      line-height: 0.92;
+      letter-spacing: 4px;
+      margin-bottom: 22px;
+    }
+    .hero-title .accent { color: var(--accent); }
+    .hero-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 44px;
+      line-height: 1.75;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      padding: 16px 36px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(212,255,0,.28);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 16px 36px;
+      border: 1.5px solid rgba(255,255,255,.25);
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .hero-stats {
+      position: absolute;
+      bottom: 52px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      gap: 52px;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 38px;
+      color: var(--accent);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+    .hero-stat-div {
+      width: 1px;
+      height: 44px;
+      background: var(--border);
+    }
+
+    /* ── SHARED ── */
+    section { padding: 108px 48px; }
+    .container { max-width: 1180px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(42px, 5.5vw, 68px);
+      letter-spacing: 2px;
+      line-height: .96;
+      margin-bottom: 18px;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 580px;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg); border-top: 1px solid var(--border); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-video-wrap {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 36px;
+      position: relative;
+    }
+    .about-panel-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(212,255,0,.07) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(212,255,0,.05) 0%, transparent 50%);
+    }
+    .about-panel-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .about-panel-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+    }
+    .about-panel-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 42px;
+      letter-spacing: 5px;
+      color: var(--accent);
+    }
+    .about-panel-logo span { color: rgba(255,255,255,.5); }
+    .about-panel-quote {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: #fff;
+      max-width: 280px;
+    }
+    .about-panel-quote em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .about-panel-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .about-panel-stat {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .about-panel-stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40px;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+    .about-panel-stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .about-panel-instagram {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .about-panel-instagram i { color: var(--accent); font-size: 16px; }
+    .about-video-overlay { display: none; }
+    .about-tag {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      background: var(--accent);
+      color: #000;
+      padding: 18px 22px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 13px;
+      line-height: 1.35;
+      z-index: 2;
+    }
+    .about-tag span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      display: block;
+      line-height: 1;
+    }
+    .about-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .about-list li i { color: var(--accent); margin-top: 2px; flex-shrink: 0; }
+    .about-actions { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* ── AMENITIES ── */
+    #amenities {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .amenities-header { text-align: center; margin-bottom: 64px; }
+    .amenities-header .section-desc { margin: 0 auto; }
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .amenity-card {
+      background: var(--bg-card2);
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background .2s;
+    }
+    .amenity-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--accent);
+      transition: height .35s;
+    }
+    .amenity-card:hover::before { height: 100%; }
+    .amenity-card:hover { background: #1b1b1b; }
+    .amenity-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(212,255,0,.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .amenity-icon i { font-size: 22px; color: var(--accent); }
+    .amenity-name { font-weight: 700; font-size: 16px; margin-bottom: 8px; }
+    .amenity-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
+    .services-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .service-item {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+    }
+    .service-item:hover .service-num { color: var(--accent); }
+    .service-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      color: var(--border);
+      line-height: 1;
+      transition: color .2s;
+      flex-shrink: 0;
+      width: 58px;
+    }
+    .service-info h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .service-info p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ── REVIEWS ── */
+    #reviews {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .reviews-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+    .rating-badge { text-align: right; }
+    .rating-big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 76px;
+      line-height: 1;
+      color: var(--accent);
+    }
+    .rating-stars { color: var(--accent); font-size: 20px; margin: 4px 0; }
+    .rating-count { font-size: 13px; color: var(--text-muted); }
+    .rating-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .rating-link:hover { text-decoration: underline; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .review-card {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      transition: border-color .2s;
+    }
+    .review-card:hover { border-color: rgba(212,255,0,.3); }
+    .review-stars { color: #FFB800; font-size: 14px; margin-bottom: 14px; }
+    .review-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 15px;
+      color: #000;
+      flex-shrink: 0;
+    }
+    .reviewer-name { font-size: 14px; font-weight: 600; }
+    .reviewer-source { font-size: 12px; color: var(--text-muted); }
+
+    /* ── INSTAGRAM ── */
+    #instagram { background: var(--bg); text-align: center; }
+    .instagram-header { margin-bottom: 52px; }
+    .instagram-header .section-desc { margin: 0 auto; }
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      max-width: 880px;
+      margin: 0 auto 52px;
+    }
+    .insta-tile {
+      aspect-ratio: 1;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      padding: 16px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      transition: all .2s;
+    }
+    .insta-tile:hover {
+      border-color: rgba(212,255,0,.4);
+      color: var(--accent);
+    }
+    .insta-tile:hover .insta-icon { color: var(--accent); }
+    .insta-icon { font-size: 30px; transition: color .2s; }
+    .insta-caption {
+      font-size: 11px;
+      line-height: 1.5;
+      opacity: .7;
+    }
+    .insta-follow-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+      color: #fff;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: opacity .2s, transform .2s;
+    }
+    .insta-follow-btn:hover { opacity: .9; transform: translateY(-2px); }
+
+    /* ── MEMBERSHIP ── */
+    #membership {
+      background: var(--accent);
+      padding: 108px 48px;
+    }
+    .membership-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #membership .section-label { color: rgba(0,0,0,.5); }
+    #membership .section-title { color: #000; }
+    #membership .section-desc { color: rgba(0,0,0,.6); margin: 0 auto 52px; }
+    .membership-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      text-align: left;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,.55);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(0,0,0,.1);
+      border: 1.5px solid rgba(0,0,0,.18);
+      border-radius: 4px;
+      padding: 14px 16px;
+      font-size: 15px;
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color .2s;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(0,0,0,.35); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: rgba(0,0,0,.45); }
+    .form-group select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+    .form-submit {
+      grid-column: 1 / -1;
+      background: #000;
+      color: var(--accent);
+      border: none;
+      padding: 18px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .form-submit:hover { background: #111; transform: translateY(-2px); }
+    .form-submit:disabled { opacity: .7; cursor: default; transform: none; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); border-top: 1px solid var(--border); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+    }
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: border-color .2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    a.contact-card:hover { border-color: var(--accent); }
+    .cc-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(212,255,0,.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cc-icon i { color: var(--accent); font-size: 18px; }
+    .cc-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .cc-value { font-size: 15px; font-weight: 600; }
+    .cc-value a { color: inherit; text-decoration: none; }
+    .cc-value a:hover { color: var(--accent); }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { color: var(--text-muted); }
+    .hours-time { font-weight: 600; color: var(--accent); }
+    .map-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      min-height: 480px;
+      border: 1px solid var(--border);
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+      min-height: 480px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #040404;
+      border-top: 1px solid var(--border);
+      padding: 64px 48px 36px;
+    }
+    .footer-inner { max-width: 1180px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 52px;
+      margin-bottom: 52px;
+    }
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px;
+      letter-spacing: 4px;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .footer-brand span { color: #fff; }
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 26px;
+    }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 17px;
+      transition: all .2s;
+    }
+    .footer-social a:hover { border-color: var(--accent); color: var(--accent); }
+    .footer-col h4 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-col ul li a {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy { font-size: 13px; color: var(--text-muted); }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-legal a:hover { color: #fff; }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,.6); }
+    .wa-float i { font-size: 28px; color: #fff; }
+
+    /* ── SCROLL REVEAL ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .about-grid,
+      .services-layout,
+      .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+      .amenities-grid { grid-template-columns: 1fr 1fr; }
+      .about-tag { bottom: 12px; right: 12px; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 76px 24px; }
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-stats { gap: 20px; bottom: 36px; }
+      .hero-stat-num { font-size: 28px; }
+      .hero-stat-div { height: 32px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .amenities-grid { grid-template-columns: 1fr; }
+      .insta-grid { grid-template-columns: repeat(2, 1fr); }
+      .membership-form { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: auto; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+      .reviews-header { flex-direction: column; gap: 24px; align-items: flex-start; }
+      .rating-badge { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">EVOX<span> FIT</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#membership" class="nav-cta">Join Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section id="hero">
+  <video id="hero-video" autoplay muted loop playsinline
+    src="https://img1.wsimg.com/isteam/videos/uA41GmyyG8IMaxXdb">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-star"></i> Newark's #1 Concept Gym
+    </div>
+    <h1 class="hero-title">
+      TRAIN.<br>
+      <span class="accent">TRANSFORM.</span><br>
+      CONQUER.
+    </h1>
+    <p class="hero-sub">
+      Newark's premier fitness concept — customized equipment, personal training,
+      sauna, smoothie bar &amp; free parking. All under one roof.
+    </p>
+    <div class="hero-buttons">
+      <a href="#membership" class="btn-primary">
+        <i class="fas fa-bolt"></i> Start Your Journey
+      </a>
+      <a href="tel:+19085482775" class="btn-outline">
+        <i class="fas fa-phone"></i> Call Us
+      </a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">4.4★</div>
+      <div class="hero-stat-label">Google Rating</div>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">162+</div>
+      <div class="hero-stat-label">Reviews</div>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">11.6K</div>
+      <div class="hero-stat-label">Followers</div>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">FREE</div>
+      <div class="hero-stat-label">Parking</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual fade-up">
+        <div class="about-video-wrap">
+          <div class="about-panel-bg"></div>
+          <div class="about-panel-grid"></div>
+          <div class="about-panel-content">
+            <div class="about-panel-logo">EVOX<span> FIT</span></div>
+            <div class="about-panel-quote">
+              Results don't come from motivation alone —<br>
+              they come from <em>consistency</em> and discipline.
+            </div>
+            <div class="about-panel-stats">
+              <div class="about-panel-stat">
+                <div class="about-panel-stat-num">4.4★</div>
+                <div class="about-panel-stat-label">Google Rating</div>
+              </div>
+              <div class="about-panel-stat">
+                <div class="about-panel-stat-num">162</div>
+                <div class="about-panel-stat-label">Reviews</div>
+              </div>
+              <div class="about-panel-stat">
+                <div class="about-panel-stat-num">11.6K</div>
+                <div class="about-panel-stat-label">Followers</div>
+              </div>
+              <div class="about-panel-stat">
+                <div class="about-panel-stat-num">FREE</div>
+                <div class="about-panel-stat-label">Parking</div>
+              </div>
+            </div>
+            <div class="about-panel-instagram">
+              <i class="fab fa-instagram"></i>
+              @evoxfit · Newark, NJ
+            </div>
+          </div>
+        </div>
+        <div class="about-tag">
+          <span>4.4</span>
+          Stars on Google
+        </div>
+      </div>
+      <div class="fade-up">
+        <p class="section-label">Who We Are</p>
+        <h2 class="section-title">MORE THAN JUST A GYM</h2>
+        <p class="section-desc">
+          EVOX FIT is a premium fitness concept in the heart of Newark, NJ — built for those who are serious about results. With custom weightlifting machines, a dedicated crosstraining area, and a team that truly cares, we're redefining what a local gym can be.
+        </p>
+        <ul class="about-list">
+          <li><i class="fas fa-check-circle"></i> Spotless, well-maintained facilities — always.</li>
+          <li><i class="fas fa-check-circle"></i> Unique, custom-built equipment you won't find elsewhere.</li>
+          <li><i class="fas fa-check-circle"></i> Dedicated staff committed to your progress.</li>
+          <li><i class="fas fa-check-circle"></i> Free parking — no excuses not to show up.</li>
+          <li><i class="fas fa-check-circle"></i> A welcoming community for all fitness levels.</li>
+        </ul>
+        <div class="about-actions">
+          <a href="#membership" class="btn-primary">Join Evox Fit</a>
+          <a href="https://www.instagram.com/evoxfit/" target="_blank" rel="noopener" class="btn-outline">
+            <i class="fab fa-instagram"></i> Follow Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== AMENITIES ========== -->
+<section id="amenities">
+  <div class="container">
+    <div class="amenities-header fade-up">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">WORLD-CLASS AMENITIES</h2>
+      <p class="section-desc">Everything you need for an elite workout — all in one place.</p>
+    </div>
+    <div class="amenities-grid">
+      <div class="amenity-card fade-up">
+        <div class="amenity-icon"><i class="fas fa-dumbbell"></i></div>
+        <div class="amenity-name">Custom Equipment</div>
+        <div class="amenity-desc">Unique, customized weightlifting machines designed for maximum performance and results.</div>
+      </div>
+      <div class="amenity-card fade-up">
+        <div class="amenity-icon"><i class="fas fa-fire-flame-curved"></i></div>
+        <div class="amenity-name">HIIT / Abs Room</div>
+        <div class="amenity-desc">A dedicated space for high-intensity interval training and core-focused workouts.</div>
+      </div>
+      <div class="amenity-card fade-up">
+        <div class="amenity-icon"><i class="fas fa-spa"></i></div>
+        <div class="amenity-name">Sauna</div>
+        <div class="amenity-desc">Relax and recover in our premium sauna, located in the locker rooms for your convenience.</div>
+      </div>
+      <div class="amenity-card fade-up">
+        <div class="amenity-icon"><i class="fas fa-blender"></i></div>
+        <div class="amenity-name">Evox Café</div>
+        <div class="amenity-desc">Fuel your workout with fresh smoothies and nutrition from our in-house smoothie bar.</div>
+      </div>
+      <div class="amenity-card fade-up">
+        <div class="amenity-icon"><i class="fas fa-person-running"></i></div>
+        <div class="amenity-name">Cardio Machines</div>
+        <div class="amenity-desc">Top-quality cardio equipment to match every pace, from warm-up to high-performance conditioning.</div>
+      </div>
+      <div class="amenity-card fade-up">
+        <div class="amenity-icon"><i class="fas fa-square-parking"></i></div>
+        <div class="amenity-name">Free Parking</div>
+        <div class="amenity-desc">Dedicated free parking so nothing stands between you and your workout.</div>
+      </div>
+      <div class="amenity-card fade-up">
+        <div class="amenity-icon"><i class="fas fa-venus"></i></div>
+        <div class="amenity-name">Evox Girls Area</div>
+        <div class="amenity-desc">A dedicated space designed for women with the right equipment and environment to train with confidence.</div>
+      </div>
+      <div class="amenity-card fade-up">
+        <div class="amenity-icon"><i class="fas fa-locker"></i></div>
+        <div class="amenity-name">Locker Rooms</div>
+        <div class="amenity-desc">Clean, secure locker rooms so you can arrive fresh, train hard, and leave feeling great.</div>
+      </div>
+      <div class="amenity-card fade-up">
+        <div class="amenity-icon"><i class="fas fa-arrows-rotate"></i></div>
+        <div class="amenity-name">Crosstraining Area</div>
+        <div class="amenity-desc">A full functional crosstraining zone for dynamic, full-body conditioning workouts.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services">
+  <div class="container">
+    <div class="services-layout">
+      <div class="fade-up">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">BUILT FOR YOUR GOALS</h2>
+        <p class="section-desc">
+          Whether you're just starting out or pushing your limits, our programs are designed to meet you where you are — and take you further.
+        </p>
+        <div style="margin-top: 40px;">
+          <a href="#membership" class="btn-primary">
+            <i class="fas fa-bolt"></i> Explore Membership
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="service-item fade-up">
+          <div class="service-num">01</div>
+          <div class="service-info">
+            <h3>Personal Training</h3>
+            <p>Work one-on-one with certified trainers who design programs tailored to your body, goals, and schedule.</p>
+          </div>
+        </div>
+        <div class="service-item fade-up">
+          <div class="service-num">02</div>
+          <div class="service-info">
+            <h3>Aerobics Classes</h3>
+            <p>High-energy group classes that make cardio fun, effective, and something to look forward to every week.</p>
+          </div>
+        </div>
+        <div class="service-item fade-up">
+          <div class="service-num">03</div>
+          <div class="service-info">
+            <h3>HIIT Workouts</h3>
+            <p>Push your limits with science-backed high-intensity interval training in our dedicated workout room.</p>
+          </div>
+        </div>
+        <div class="service-item fade-up">
+          <div class="service-num">04</div>
+          <div class="service-info">
+            <h3>Evox Café &amp; Nutrition</h3>
+            <p>From fresh smoothies to expert guidance — we support your fitness goals well beyond the workout floor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REVIEWS ========== -->
+<section id="reviews">
+  <div class="container">
+    <div class="reviews-header fade-up">
+      <div>
+        <p class="section-label">What Members Say</p>
+        <h2 class="section-title">REAL RESULTS,<br>REAL PEOPLE</h2>
+      </div>
+      <div class="rating-badge">
+        <div class="rating-big">4.4</div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">Based on 162 Google Reviews</div>
+        <a class="rating-link" href="https://maps.google.com/?q=Evox+Fit+14+Chapel+St+Newark+NJ" target="_blank" rel="noopener">
+          Leave a Review →
+        </a>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best gym in the area — it is very clean and has very unique equipment. The smoothie bar is great and the staff is always very nice. I've done personal training here and the results speak for themselves."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">M</div>
+          <div>
+            <div class="reviewer-name">Verified Member</div>
+            <div class="reviewer-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Spotless, well-maintained gym with great staff. I've been working out here for the past 2 years. The floors, machines, and locker rooms are always clean. Highly recommend to anyone in Newark."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">S</div>
+          <div>
+            <div class="reviewer-name">2-Year Member</div>
+            <div class="reviewer-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They have many cardio machines that are great quality. The gym has a sauna in the locker rooms and a dedicated room for HIIT/abs workouts. If you're looking for a good gym, look no further."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">J</div>
+          <div>
+            <div class="reviewer-name">Regular Member</div>
+            <div class="reviewer-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INSTAGRAM ========== -->
+<section id="instagram">
+  <div class="container">
+    <div class="instagram-header fade-up">
+      <p class="section-label">Follow Our Journey</p>
+      <h2 class="section-title">@EVOXFIT</h2>
+      <p class="section-desc">
+        Daily motivation, transformation stories, and behind-the-scenes content.
+        Join 11,600+ followers on Instagram.
+      </p>
+    </div>
+    <div class="insta-grid fade-up">
+      <a href="https://www.instagram.com/evoxfit/" target="_blank" rel="noopener" class="insta-tile">
+        <i class="fab fa-instagram insta-icon"></i>
+        <span class="insta-caption">Results come from consistency, discipline &amp; daily work 💪🔥</span>
+      </a>
+      <a href="https://www.instagram.com/evoxfit/" target="_blank" rel="noopener" class="insta-tile">
+        <i class="fab fa-instagram insta-icon"></i>
+        <span class="insta-caption">Focus on the mind-muscle connection every rep 🎯</span>
+      </a>
+      <a href="https://www.instagram.com/evoxfit/" target="_blank" rel="noopener" class="insta-tile">
+        <i class="fab fa-instagram insta-icon"></i>
+        <span class="insta-caption">Train your core. Build your strength. 🔥</span>
+      </a>
+      <a href="https://www.instagram.com/evoxfit/" target="_blank" rel="noopener" class="insta-tile">
+        <i class="fab fa-instagram insta-icon"></i>
+        <span class="insta-caption">Train smart. Stay consistent. Let progress speak ✨</span>
+      </a>
+    </div>
+    <div style="text-align:center;">
+      <a href="https://www.instagram.com/evoxfit/" target="_blank" rel="noopener" class="insta-follow-btn">
+        <i class="fab fa-instagram"></i> Follow @evoxfit on Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MEMBERSHIP ========== -->
+<section id="membership">
+  <div class="membership-inner">
+    <p class="section-label">Ready to Start?</p>
+    <h2 class="section-title">JOIN EVOX FIT TODAY</h2>
+    <p class="section-desc">
+      Fill out the form below and our team will get back to you quickly.
+      No pressure — just results.
+    </p>
+    <form class="membership-form" id="memberForm" onsubmit="handleSubmit(event)" novalidate>
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input id="fname" type="text" placeholder="Your first name" required>
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input id="lname" type="text" placeholder="Your last name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input id="email" type="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" placeholder="(000) 000-0000">
+      </div>
+      <div class="form-group full">
+        <label for="interest">I'm Interested In</label>
+        <select id="interest">
+          <option value="">Select a service...</option>
+          <option>General Membership</option>
+          <option>Personal Training</option>
+          <option>Aerobics Classes</option>
+          <option>HIIT Program</option>
+          <option>Evox Girls Program</option>
+          <option>Evox Café &amp; Nutrition</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label for="message">Message (Optional)</label>
+        <textarea id="message" rows="3" placeholder="Tell us about your fitness goals..."></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="formBtn">
+        <i class="fas fa-bolt"></i> Send My Request
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <p class="section-label">Find Us</p>
+        <h2 class="section-title">COME TRAIN<br>WITH US</h2>
+        <div class="contact-cards">
+          <a href="https://maps.google.com/?q=Evox+Fit+14+Chapel+St+Newark+NJ+07105" target="_blank" rel="noopener" class="contact-card">
+            <div class="cc-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <div class="cc-label">Address</div>
+              <div class="cc-value">14 Chapel St, Newark, NJ 07105</div>
+            </div>
+          </a>
+          <a href="tel:+19085482775" class="contact-card">
+            <div class="cc-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <div class="cc-label">Phone</div>
+              <div class="cc-value">+1 (908) 548-2775</div>
+            </div>
+          </a>
+          <a href="https://wa.me/+19085482775" target="_blank" rel="noopener" class="contact-card">
+            <div class="cc-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <div class="cc-label">WhatsApp</div>
+              <div class="cc-value">Message Us Directly</div>
+            </div>
+          </a>
+          <div class="contact-card">
+            <div class="cc-icon"><i class="fas fa-clock"></i></div>
+            <div style="width:100%;">
+              <div class="cc-label">Hours</div>
+              <div class="hours-row">
+                <span class="hours-day">Monday – Friday</span>
+                <span class="hours-time">Open until 12:00 AM</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Saturday</span>
+                <span class="hours-time">7:00 AM – 8:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Sunday</span>
+                <span class="hours-time">7:00 AM – 8:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap fade-up">
+        <iframe
+          src="https://maps.google.com/maps?q=14+Chapel+St+Newark+NJ+07105&output=embed&z=16"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Evox Fit Location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">EVOX<span> FIT</span></div>
+        <p class="footer-tagline">
+          Newark's premier fitness concept. Train hard, recover well, and become
+          the best version of yourself — one rep at a time.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/evoxfit/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.snapchat.com/add/evoxfit" target="_blank" rel="noopener" aria-label="Snapchat">
+            <i class="fab fa-snapchat"></i>
+          </a>
+          <a href="https://wa.me/+19085482775" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Personal Training</a></li>
+          <li><a href="#services">Aerobics Classes</a></li>
+          <li><a href="#services">HIIT Program</a></li>
+          <li><a href="#services">Evox Café</a></li>
+          <li><a href="#services">Evox Girls</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+19085482775">(908) 548-2775</a></li>
+          <li><a href="https://maps.google.com/?q=14+Chapel+St+Newark+NJ" target="_blank" rel="noopener">14 Chapel St, Newark NJ</a></li>
+          <li><a href="https://wa.me/+19085482775" target="_blank" rel="noopener">WhatsApp Chat</a></li>
+          <li><a href="https://www.instagram.com/evoxfit/" target="_blank" rel="noopener">@evoxfit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Evox Fit USA. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/+19085482775" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Navbar scroll tint
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.style.background = window.scrollY > 60
+      ? 'rgba(8,8,8,0.98)'
+      : 'rgba(8,8,8,0.92)';
+  });
+
+  // Mobile menu
+  let menuOpen = false;
+  function toggleMenu() {
+    const links = document.getElementById('navLinks');
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      links.style.cssText = `
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px; left: 0; right: 0;
+        background: #0a0a0a;
+        padding: 24px 32px 32px;
+        border-bottom: 1px solid #1e1e1e;
+        gap: 18px;
+      `;
+    } else {
+      links.style.cssText = 'display: none;';
+    }
+  }
+
+  // Close menu on link click
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (menuOpen) toggleMenu();
+    });
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('formBtn');
+    btn.innerHTML = '<i class="fas fa-check"></i> Request Sent! We\'ll be in touch soon.';
+    btn.disabled = true;
+    btn.style.background = '#1a1a1a';
+  }
+</script>
+</body>
+</html>
